@@ -1,6 +1,6 @@
 import React from "react";
-import { connect } from "react-redux";
-import { initialState } from "./store/reducers";
+import { connect, useSelector } from "react-redux";
+
 import { buyCarPart, removeCarPart } from "./store/actions";
 import Header from "./components/Header";
 import AddedFeatures from "./components/AddedFeatures";
@@ -9,6 +9,8 @@ import Total from "./components/Total";
 
 const App = props => {
   console.log("App props", props);
+
+  const state = useSelector(state => state.carReducer);
 
   const removeFeature = item => {
     // dispatch an action here to remove an item
